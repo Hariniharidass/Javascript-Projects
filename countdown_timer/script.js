@@ -4,8 +4,9 @@ const minEl = document.getElementById('minutes');
 const secEl = document.getElementById('seconds');
 
 
-function countdown() {
-    const myDate = new Date('27 jun 2021');
+function countdown()
+{
+    const myDate = new Date('26 jun 2021');
     const currentDate = new Date();
     const ms = (myDate - currentDate) / 1000;
 
@@ -22,7 +23,8 @@ function countdown() {
 
 }
 
-function formatTime(time) {
+function formatTime(time)
+{
     return time < 10 ? (`0${time}`) : time;
 
 }
