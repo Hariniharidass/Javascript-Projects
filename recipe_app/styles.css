@@ -1,0 +1,219 @@
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ADA996;
+            background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+            background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .mobile-container {
+            background-color: azure;
+            width: 400px;
+            box-shadow: 0 0 10px 2px #313028;
+            overflow: hidden;
+            border-radius: 3px;
+        }
+
+        header {
+            display: flex;
+            padding: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header input {
+            border: 2px solid #313028;
+            background-color: #EAEAEA;
+            border-radius: 3px;
+            padding: 0.5rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header button {
+            background-color: transparent;
+            color: #080404;
+            font-size: 1.5rem;
+            margin-left: 10px;
+            border: none;
+        }
+
+        .fav-container {
+            padding: 1rem;
+            text-align: center;
+            background-color: rgb(177, 143, 100);
+        }
+
+        .fav-meals {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            overflow: auto;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fav-meals li {
+            position: relative;
+            margin:5px;
+            width: 90px;
+            cursor: pointer;
+        }
+        .fav-meals li .clear{
+            background-color: transparent;
+            border: none;
+            opacity: 0;
+            position: absolute;
+            cursor: pointer;
+            top: -0.5rem;
+            right: -0.5rem;
+            font-size: 1.3rem;
+        }
+        .fav-meals li:hover .clear {
+            opacity: 1;
+        }
+
+        .fav-meals li img {
+            border: 2px solid rgb(250, 250, 245);
+            border-radius: 50%;
+            object-fit: cover;
+            height: 80px;
+            width: 80px;
+        }
+
+        .fav-meals li span {
+            font-size: 0.8rem;
+            display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 75px;
+        }
+
+        .meal {
+            border-radius: 5px;
+            margin: 1rem;
+            box-shadow: 0 0 10px 2px #3333331a;
+            overflow: hidden;
+
+        }
+
+        .meal-header {
+            position: relative;
+        }
+
+        .meal-header random {
+            position: absolute;
+            top: 1rem;
+            background-color: silver;
+            padding: 0.25rem 1rem;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .meal-header img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .meal-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .meal-body h3 {
+          padding: 1rem;
+          cursor: pointer;
+        }
+        .meal-body h5{
+text-align: center;
+padding: 1rem;
+        }
+
+        .meal-body .fav-btn {
+            border: none;
+            background-color: transparent;
+            color: slategrey;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .meal-body .fav-btn.active {
+            color: tomato;
+        }
+
+        .error-block {
+            border-radius: 5px;
+            margin: 1rem;
+            box-shadow: 0 0 10px 2px #3333331a;
+            overflow: hidden;
+            font-size: 1.2rem;
+        }
+        .popup-container{
+            background-color: rgba(0, 0, 0,0.5);
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            left:0;
+            right: 0;
+            bottom: 0;
+            top:0 ;
+        }
+        .popup{
+            background-color: rgb(250, 250, 245);
+            border-radius: 5px;
+            padding: 0 2rem;
+            position: relative;
+            overflow: auto;
+            max-width: 600px;
+            width: 100%;
+            padding:2rem ;
+            max-height: 100vh;
+
+
+        }
+        .popup h1{
+            text-align: center;
+        }
+        .popup img {
+            padding:0 2rem ;
+            background-color: white;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 600px;
+        }
+        .popup .close-popup{
+            background-color: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            top: 0.5rem;
+            right: 2rem;
+
+
+        }
+
+        .popup-container.hidden{
+            opacity:0;
+            pointer-events: none;
+        }
