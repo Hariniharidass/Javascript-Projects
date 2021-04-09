@@ -16,18 +16,18 @@ body {
     align-content: center;
 }
 
-div.quiz-container {
-    margin: auto;
-}
 
 .quiz-container {
     background-color: #b4eff3;
     border-radius: 10px;
     box-shadow: 0 0 50px rgba(2, 2, 2, 0.1);
-    width: 700px;
-    height: 700px;
+    width: 100%;
+    height: 100%;
     max-width: 100%;
-    overflow: hidden;
+    display:flex;
+    flex-direction:column;
+    margin: 20px;
+    padding: 20px;
 }
 
 .title {
@@ -80,4 +80,7 @@ ul li {
     background-color: #b4eff3;
     color: #380036;
     font-size: 3rem;
+}
+.hidden{
+    display: none;
 }
