@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("./cake.jpg");
+    background-image: url("./newyr.jpeg ");
     background-size: cover;
     background-position: center center;
     display: flex;
@@ -20,6 +20,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    color: aqua;
 }
 
 h1 {
@@ -28,6 +29,7 @@ h1 {
     font-size: 4rem;
     font-weight: normal;
     justify-content: center;
+    color: aliceblue;
 }
 
 .big-text {

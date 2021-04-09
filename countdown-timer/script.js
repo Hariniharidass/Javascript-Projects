@@ -6,7 +6,7 @@ const secEl = document.getElementById('seconds');
 
 function countdown()
 {
-    const myDate = new Date('26 jun 2021');
+    const myDate = new Date('1 jan 2022');
     const currentDate = new Date();
     const ms = (myDate - currentDate) / 1000;
 
