@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recipe</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+            crossorigin="anonymous" />
 
-    <script src="script.js" defer></script>
-</head>
+        <script src="script.js" defer></script>
+    </head>
 
-<body>
-    <div class="mobile-container">
+    <body>
+        <div class="mobile-container">
+            <h1>Recipe App</h1>
+            <header>
+                <input type="text" class="text" id="search-term">
+                <button id="search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </header>
+            <div class="fav-container">
+                <h3>Favourite meals</h3>
+                <ul class="fav-meals" id="fav-meals">
 
-        <header>
-            <input type="text" class="text" id="search-term">
-            <button id="search">
-                <i class="fas fa-search"></i>
-            </button>
-        </header>
-        <div class="fav-container">
-            <h3>Favourite meals</h3>
-            <ul class="fav-meals" id="fav-meals">
+                </ul>
+            </div>
 
-            </ul>
+            <div class="meals" id="meals">
+
+            </div>
         </div>
+        <div class="popup-container hidden" id="meal-popup">
 
-        <div class="meals" id="meals">
-
-        </div>
-    </div>
-    <div class="popup-container hidden" id="meal-popup">
-
-        <div class="popup" >
+            <div class="popup">
 
 
-            <button class="close-popup" id="close-popup">
-            <i class="fas fa-times"></i>
-             </button>
+                <button class="close-popup" id="close-popup">
+                    <i class="fas fa-times"></i>
+                </button>
 
-            <div class="meal-info" id="meal-info">
+                <div class="meal-info" id="meal-info">
 
-                
 
+
+
+                </div>
 
             </div>
 
+
         </div>
-
-
-    </div>
-</body>
+    </body>
 
 </html>
