@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("./newyr.jpeg ");
+    background-image: url("./fireworks.gif ");
     background-size: cover;
     background-position: center center;
     display: flex;
@@ -16,6 +16,7 @@ body {
 }
 
 .countdown-container {
+    margin-top: 350px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;

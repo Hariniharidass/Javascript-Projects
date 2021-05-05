@@ -18,10 +18,10 @@ let correct_ans = [];
 let score = 0;
 var quest_count = 0;
 var local_counter = 0;
-
+var question_length = 5;
 function start()
 {
-    if (quest_count < 10) {
+    if (quest_count < question_length) {
         getData().then(extract_data);
         quest_count++;
     }
@@ -37,10 +37,36 @@ async function getData()
 * Used this API GENERATOR
 *     https://opentdb.com/api_config.php
 */
-    const response = await fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple');
+    showSpinner();
+    const response = await fetch('https://opentdb.com/api.php?amount=' + question_length + '&category=9&difficulty=easy&type=multiple');
     const data = await response.json();
+    hideSpinner();
     return data;
 }
+const spinner = document.getElementById("spinner");
+const quizcontainer = document.getElementById("quiz-container");
+/**
+ * Show Spinner
+ */
+function showSpinner()
+{
+    quizcontainer.style.visibility = "hidden";
+    spinner.className = "show";
+    setTimeout(() =>
+    {
+        spinner.className = spinner.className.replace("show", "");
+    }, 5000);
+}
+/**
+ * Hide Spinner
+ */
+function hideSpinner()
+{
+    quizcontainer.style.visibility = "visible";
+    spinner.className = spinner.className.replace("show", "");
+}
+
+
 
 /**
  *
@@ -50,7 +76,7 @@ function extract_data(data)
 {
     var i;
     console.log(data);
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < question_length; i++) {
         quest.push(data.results[i].question);
         options.push(data.results[i].incorrect_answers[0]);
         options.push(data.results[i].correct_answer);
@@ -71,13 +97,13 @@ function prepareQuiz(quest, options, correct_ans, counter)
     var options_array = [];
     var i = 0;
     var j = 4;
-    while (count <= 10) {
+    while (count <= question_length) {
         options_array.push(options.slice(i, j));
         count++;
         i = j;
         j = j + 4;
     }
-    if (counter === 9) {
+    if (counter === question_length - 1) {
         startQuiz(quest, options_array, correct_ans, local_counter);
     }
 }
@@ -137,11 +163,11 @@ function startQuiz(quest, options_array, correct_ans, local_counter)
                     score++;
                 }
                 local_counter++;
-                if (local_counter < 10) {
+                if (local_counter < question_length) {
                     // load the next question
                     startQuiz(quest, options_array, correct_ans, local_counter)
                 }
-                else if (local_counter >= 10) {
+                else if (local_counter >= question_length) {
                     // Display the result and questions with correct answer
                     question.innerHTML = "";
                     quest.forEach((quests, index) =>
@@ -153,7 +179,7 @@ function startQuiz(quest, options_array, correct_ans, local_counter)
                     document.getElementById('result').style.visibility = 'hidden';
                     document.getElementById('heading').style.visibility = 'hidden';
                     quiz.innerHTML = '<h1 style="text-align:center;"> Your score is ' + score + '/' +
-                        '10' + '</h1><span><button class="submit" onclick= location.reload()>Reload Quiz</button></span>';
+                        question_length + '</h1><span><button class="submit" onclick= location.reload()>Reload Quiz</button></span>';
                 }
             }
         }
